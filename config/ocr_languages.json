@@ -1,0 +1,161 @@
+{
+  "supported_languages": {
+    "eng": {
+      "name": "English",
+      "tesseract_code": "eng",
+      "direction": "ltr",
+      "confidence_threshold": 30
+    },
+    "fra": {
+      "name": "French",
+      "tesseract_code": "fra", 
+      "direction": "ltr",
+      "confidence_threshold": 35
+    },
+    "deu": {
+      "name": "German",
+      "tesseract_code": "deu",
+      "direction": "ltr", 
+      "confidence_threshold": 35
+    },
+    "spa": {
+      "name": "Spanish",
+      "tesseract_code": "spa",
+      "direction": "ltr",
+      "confidence_threshold": 30
+    },
+    "ita": {
+      "name": "Italian", 
+      "tesseract_code": "ita",
+      "direction": "ltr",
+      "confidence_threshold": 30
+    },
+    "por": {
+      "name": "Portuguese",
+      "tesseract_code": "por",
+      "direction": "ltr",
+      "confidence_threshold": 30
+    },
+    "rus": {
+      "name": "Russian",
+      "tesseract_code": "rus",
+      "direction": "ltr",
+      "confidence_threshold": 40
+    },
+    "jpn": {
+      "name": "Japanese",
+      "tesseract_code": "jpn",
+      "direction": "ttb",
+      "confidence_threshold": 45
+    },
+    "chi_sim": {
+      "name": "Chinese Simplified",
+      "tesseract_code": "chi_sim",
+      "direction": "ltr",
+      "confidence_threshold": 45
+    },
+    "chi_tra": {
+      "name": "Chinese Traditional",
+      "tesseract_code": "chi_tra", 
+      "direction": "ltr",
+      "confidence_threshold": 45
+    },
+    "kor": {
+      "name": "Korean",
+      "tesseract_code": "kor",
+      "direction": "ltr",
+      "confidence_threshold": 40
+    },
+    "ara": {
+      "name": "Arabic",
+      "tesseract_code": "ara",
+      "direction": "rtl",
+      "confidence_threshold": 50
+    },
+    "heb": {
+      "name": "Hebrew",
+      "tesseract_code": "heb",
+      "direction": "rtl", 
+      "confidence_threshold": 45
+    },
+    "hin": {
+      "name": "Hindi",
+      "tesseract_code": "hin",
+      "direction": "ltr",
+      "confidence_threshold": 45
+    },
+    "nld": {
+      "name": "Dutch",
+      "tesseract_code": "nld",
+      "direction": "ltr",
+      "confidence_threshold": 30
+    },
+    "pol": {
+      "name": "Polish",
+      "tesseract_code": "pol",
+      "direction": "ltr",
+      "confidence_threshold": 35
+    }
+  },
+  
+  "language_groups": {
+    "european": ["eng", "fra", "deu", "spa", "ita", "por", "nld", "pol"],
+    "asian": ["jpn", "chi_sim", "chi_tra", "kor", "hin"],
+    "middle_eastern": ["ara", "heb"],
+    "cyrillic": ["rus"]
+  },
+  
+  "default_language": "eng",
+  
+  "ocr_config": {
+    "page_segmentation_modes": {
+      "auto": 3,
+      "single_column": 4,
+      "single_block": 6,
+      "single_line": 7,
+      "single_word": 8,
+      "single_char": 10
+    },
+    "default_psm": 6,
+    
+    "engine_modes": {
+      "legacy": 0,
+      "neural": 1,
+      "both": 2
+    },
+    "default_oem": 1,
+    
+    "preprocessing": {
+      "denoise": true,
+      "deskew": true,
+      "enhance_contrast": true,
+      "binarize": true,
+      "scale_factor": 2.0
+    },
+    
+    "postprocessing": {
+      "spell_check": false,
+      "confidence_filter": true,
+      "whitespace_cleanup": true,
+      "line_breaks": true
+    }
+  },
+  
+  "quality_settings": {
+    "fast": {
+      "confidence_threshold": 20,
+      "preprocessing_level": "minimal",
+      "psm": 6
+    },
+    "balanced": {
+      "confidence_threshold": 30,
+      "preprocessing_level": "standard", 
+      "psm": 6
+    },
+    "high_quality": {
+      "confidence_threshold": 50,
+      "preprocessing_level": "extensive",
+      "psm": 3
+    }
+  }
+}
