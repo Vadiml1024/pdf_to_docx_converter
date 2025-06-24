@@ -23,12 +23,12 @@ class TestPDFAnalyzer:
         # Setup mocks
         mock_doc = Mock()
         mock_doc.metadata = {"Title": "Test Document"}
-        mock_doc.__len__.return_value = 1
+        mock_doc.__len__ = Mock(return_value=1)
         
         mock_page = Mock()
         mock_page.rect.width = 612
         mock_page.rect.height = 792
-        mock_doc.__getitem__.return_value = mock_page
+        mock_doc.__getitem__ = Mock(return_value=mock_page)
         
         mock_fitz_open.return_value = mock_doc
         
@@ -81,8 +81,8 @@ class TestPDFAnalyzer:
         }
         
         mock_page.get_text.return_value = mock_blocks
-        mock_doc.__len__.return_value = 1
-        mock_doc.__getitem__.return_value = mock_page
+        mock_doc.__len__ = Mock(return_value=1)
+        mock_doc.__getitem__ = Mock(return_value=mock_page)
         
         result = analyzer._extract_text_blocks(mock_doc)
         
@@ -113,8 +113,8 @@ class TestPDFAnalyzer:
         mock_pixmap.colorspace = None
         mock_pixmap.tobytes.return_value = b"image_data"
         
-        mock_doc.__len__.return_value = 1
-        mock_doc.__getitem__.return_value = mock_page
+        mock_doc.__len__ = Mock(return_value=1)
+        mock_doc.__getitem__ = Mock(return_value=mock_page)
         
         with patch('src.pdf_analyzer.fitz.Pixmap', return_value=mock_pixmap):
             result = analyzer._extract_images(mock_doc)
